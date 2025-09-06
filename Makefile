@@ -12,7 +12,7 @@ help:
 	@echo
 
 $(VENV):
-	python3 -m venv $(VENV)
+	python3.12 -m venv $(VENV)
 
 install: install-deb install-pip
 
@@ -24,9 +24,19 @@ install-deb:
 	done
 
 install-pip: $(VENV)
-	. $(VENV)/bin/activate; pip3 install --upgrade -r requirements.txt
+	source $(VENV)/bin/activate; pip3 install --upgrade -r requirements.txt
 
-code-agent-gemini-demo:
-	. $(VENV)/bin/activate; src/code_agent_gemini_demo.py
+install-mac: install-deb-mac install-pip
+	
+install-deb-mac:
+	@echo python@3.12 is necessary for venv.
+	@echo ffmpeg is necessary to read audio files for ASR
+	for package in python@3.12 ffmpeg; do \
+		brew list --versions $${package} 2>&1 > /dev/null || brew install $${package}; \
+	done
 
+nutrition-agent:
+	source $(VENV)/bin/activate; python src/agent.py
 
+pytest:
+	pytest -s tests/test_agent.py
