@@ -7,7 +7,7 @@ from agent import agent
 
 """
 Minimal tests demonstrating agent behavior with NutritionLookup tool.
-Run with: pytest -s tests/test_agent.py
+Run with: make pytest
 """
 
 import pytest
