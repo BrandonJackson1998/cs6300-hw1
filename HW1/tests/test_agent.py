@@ -11,8 +11,6 @@ Run with: make pytest
 """
 
 import pytest
-from agent import agent
-
 
 @pytest.mark.parametrize("age, gender, foods", [
     ("25", "male", ["1 banana"]),  # single food

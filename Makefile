@@ -35,8 +35,11 @@ install-deb-mac:
 		brew list --versions $${package} 2>&1 > /dev/null || brew install $${package}; \
 	done
 
-nutrition-agent:
-	source $(VENV)/bin/activate; python src/agent.py
+agent%:
+	source $(VENV)/bin/activate; python HW$*/src/agent.py
 
-pytest:
-	pytest -s tests/test_agent.py
+test-agent%:
+	pytest -s HW$*/tests/test_agent.py
+
+test-tools%:
+	pytest -s HW$*/tests/test_tools.py
