@@ -78,11 +78,17 @@ make agent2
 
 The program will:
 
-1. Ask for your **age**.
-2. Ask for your **gender**.  
-3. Prompt you to enter food items you ate today (**type 'done' when finished**).  
-4. Fetch nutrition data from **Nutritionix**.  
-5. Use **Gemini** to analyze your day’s intake and provide feedback.  
+1. Ask if you are a returing user.
+2. Ask for your **name**.
+3. If returning user goto step 8, else goto step 4.
+4. Ask for your **age**.
+5. Ask for **weight**.
+6. Ask for **height**.
+7. Ask for **gender**.
+8. Ask for the date for the log.
+9. Prompt you to enter food items you ate today (**type 'done' when finished**).  
+10. Fetch nutrition data from **Nutritionix**. 
+11. Use **Gemini** to orchestrate tool usage to generate a detailed user report.
 
 ---
 
