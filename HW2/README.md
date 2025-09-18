@@ -128,6 +128,60 @@ Kevin, your tracking shows a consistent intake of approximately 569 calories, 24
 
 ---
 
+## Example Data
+
+```text
+{
+  "name": "Kevin",
+  "age": 20,
+  "weight": 100.0,
+  "height": 200.0,
+  "gender": "male",
+  "history": [
+    {
+      "date": "2025-09-16",
+      "foods": [
+        "pizza"
+      ],
+      "totals": {
+        "calories": 569.24,
+        "protein": 24.37,
+        "carbs": 71.33,
+        "fat": 20.74
+      },
+      "analysis": {
+        "calories": "Deficit: 569.2 vs 2586",
+        "protein": "Deficit: 24.4 vs 80",
+        "carbs": "Deficit: 71.3 vs 356",
+        "fat": "Deficit: 20.7 vs 86"
+      }
+    },
+    {
+      "date": "2025-09-17",
+      "foods": [
+        "pizza",
+        "pizza"
+      ],
+      "totals": {
+        "calories": 569.24,
+        "protein": 24.38,
+        "carbs": 71.32,
+        "fat": 20.74
+      },
+      "analysis": {
+        "calories": "Deficit: 569.2 vs 2586",
+        "protein": "Deficit: 24.4 vs 80",
+        "carbs": "Deficit: 71.3 vs 356",
+        "fat": "Deficit: 20.7 vs 86"
+      }
+    }
+  ]
+}
+
+```
+
+---
+
 ## Testing
 
 Minimal test fixtures are included in `tests/`.  
